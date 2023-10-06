@@ -1,0 +1,16 @@
+<ul>
+    {% for category in categories %}
+        <li {% if current_url == category.get_absolute_url %}class="active"{% endif %}>
+            <a href="{{ category.get_absolute_url }}">{{ category.title }}</a>
+            {% if category.children.all %}
+                <ul>
+                    {% for subcategory in category.children.all %}
+                        <li {% if current_url == subcategory.get_absolute_url %}class="active"{% endif %}>
+                            <a href="{{ subcategory.get_absolute_url }}">{{ subcategory.title }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>
