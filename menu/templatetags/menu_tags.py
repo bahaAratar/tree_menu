@@ -1,5 +1,3 @@
-# from django import template
-# from ..models import Category
 from django import template
 from ..models import Category
 
