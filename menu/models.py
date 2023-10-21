@@ -11,7 +11,7 @@ class Category(models.Model):
     url = models.CharField(max_length=255, blank=True, null=True)
 
     def __str__(self):
-        return self.title
+        return f'title {self.title}'
     
     def get_absolute_url(self):
         return reverse('category', kwargs={'cat_id': self.pk})
